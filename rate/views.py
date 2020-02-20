@@ -19,5 +19,5 @@ def create(req):
     return render(req, 'rate/create.html', {"form":form})
 
 def detail(req, rate_id):
-    rates = Rate.objects
-    return render(req, 'rate/detail.html', {'rates':rates})
+    rate = get_object_or_404(Rate, pk = rate_id )
+    return render(req, 'rate/detail.html', {'rate': rate})

@@ -22,10 +22,12 @@ def login(request):
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request,user)
-            return redirect('home')
+            return redirect('index_tem')
     return render(request,'member/login.html')
 
 def logout(request):
     auth.logout(request)
     return render(request,'member/logout.html')
+
+
 

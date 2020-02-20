@@ -1,3 +1,34 @@
+{% extends 'base.html' %}
+{% for rate in rates %}
+{% block content %}
+    {% if user.is_authenticated %}
+        안녕하세요 {{user.username}}님!
+        <br>
+        <a href="{% url 'logout' %}">로그아웃</a>
+        <br><br>
+        <br><br>   
+        <h2>과목 : {{rate.subject}}</h2>
+        <br>
+        교수님 : {{rate.professor}}
+        <br>
+        평점 : {{rate.rate}}점
+        <br>
+        제목 : {{rate.title}}
+        <br>
+        내용 : {{rate.content}}
+        <br>
+    {% else %}
+        로그인 후 이용해주세요.
+        <br>
+        <a href="{% url 'login' %}">로그인</a>
+        <br>
+        <a href="{% url 'signup' %}">회원가입</a>
+        <br>
+    {% endif %}
+    
+{% endblock content %}
+{% endfor %}
+
 
 
 

@@ -11,3 +11,6 @@ class Rate(models.Model):
     updated_at = models.DateTimeField(auto_now=True, auto_now_add=False)
     title = models.TextField()
     content = models.TextField()
+
+    def __str__(self):
+        return self.title
