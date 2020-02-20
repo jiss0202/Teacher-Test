@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import User
 from django.contrib import auth
 
+def index_tem(request):
+    return render(request,'member/index_tem.html')
 
 def signup(request):
     if request.method == "POST":
@@ -14,6 +16,13 @@ def signup(request):
     return render(request, 'member/signup.html')
 
 def login(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = auth.authenticate(request, username=username, password=password)
+        if user is not None:
+            auth.login(request,user)
+            return render(request,'member/index_tem.html')
     return render(request,'member/login.html')
 
 def logout(request):
