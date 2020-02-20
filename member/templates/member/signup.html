@@ -1,1 +1,28 @@
-signup
+
+{% block content %}
+
+<h1>Sign Up!</h1>
+
+<form method="POST" action="{% url 'signup'%}">
+
+{% csrf_token %}
+아이디:
+<br>
+<input name="username"  type="text" value="">
+<br>
+비밀번호:
+<br>
+<input name="password"  type="password" value="">
+<br>
+비밀번호 확인:
+<br>
+<input name="password_re"  type="password" value="">
+<br>
+학년:
+<br>
+<input name="grade" type="number" value="">
+<br>
+<input class="btn btn-primary" type="submit" value="회원가입">
+</form>
+
+{% endblock %}
