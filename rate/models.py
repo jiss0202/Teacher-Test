@@ -1,9 +1,9 @@
 from django.db import models
-from member.models import User
+from django.conf import settings 
 
 # Create your models here.
 class Rate(models.Model):
-    user = models.ForeignKey("User", verbose_name="rate_user", on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name="rate_user", on_delete=models.CASCADE)
     subject = models.CharField(max_length=60)
     professor = models.CharField(max_length=45)
     rate = models.IntegerField()
