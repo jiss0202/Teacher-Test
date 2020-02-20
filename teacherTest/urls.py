@@ -6,5 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('member/',include('member.urls')),
     path('rate/', include('rate.urls')),
-    path('',rate.views.home, name="home"),
+    path('',rate.views.readAll, name="home"),
 ]

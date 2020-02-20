@@ -18,6 +18,6 @@ def create(req):
         form = RateForm()
     return render(req, 'rate/create.html', {"form":form})
 
-def home(req):
+def detail(req, rate_id):
     rates = Rate.objects
-    return render(req, 'rate/home.html', {'rates': rates})
+    return render(req, 'rate/detail.html', {'rates':rates})

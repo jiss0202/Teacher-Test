@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
+<h1>숙명여자대학교 강의평가</h1>
+<br>
 
 {% block content %}
-    <h1>최신 강의평</h1>
-    <br>
     <a href={% url 'rate_create' %}>강의평 작성하기</a>
     <br><br>
     <table style="text-align:center">
@@ -24,7 +24,7 @@
                 <td>{{ rate.rate }}점</td>
                 <td><b>{{ rate.title }}</b></td>
                 <td>
-                    <a href="#">{{ rate.content|truncatechars:20 }}</a>
+                    <a href="{% url 'detail' rate.id %}">{{ rate.content|truncatechars:20 }}</a>
                 </td>
                 <td>{{ rate.created_at|date:'y/m/d' }}</td>
             {% endfor %}
