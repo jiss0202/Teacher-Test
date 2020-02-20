@@ -1,4 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <h1>최신 강의평</h1>
+    <br>
+    <a href={% url 'rate_create' %}>강의평 작성하기</a>
+    <br><br>
+    <table style="text-align:center">
+        <thead>
+        <tr>
+            <th scope="col" width="10%">과목</th>
+            <th scope="col" width="10%">교수명</th>
+            <th scope="col" width="20%">제목</th>
+            <th scope="col" width="50%">내용</th>
+            <th scope="col" width="10%">작성시간</th>
+        <tr>
+        </thead>
+        <tbody>
+            {% for rate in rates %}
+            <tr>
+                <td>{{ rate.subject }}</td>
+                <td>{{ rate.professor }}</td>
+                <td><b>{{ rate.title }}</b></td>
+                <td>
+                    <a href="#">{{ rate.content|truncatechars:20 }} ... </a>
+                </td>
+                <td>{{ rate.created_at|date:'y/m/d' }}</td>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock content %}

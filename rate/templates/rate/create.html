@@ -1,4 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+<h1>새 강의평 작성</h1>
+<br><br>
+<form method="POST" action="">
+    {% csrf_token %}
+    과목명:
+    <br>
+    {{ form.subject }}
+    <br>
+    교수명:
+    <br>
+    {{ form.professor }}
+    <br>
+    평점:
+    <br>
+    {{ form.rate }}
+    <br>
+    제목:
+    <br>
+    {{ form.title }}
+    <br>
+    강의평:
+    <br>
+    {{ form.content }}
+    <br>
+    <input type="submit" value="등록하기">
+</form>
+
 {% endblock content %}
