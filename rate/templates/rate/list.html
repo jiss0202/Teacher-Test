@@ -8,11 +8,12 @@
     <table style="text-align:center">
         <thead>
         <tr>
-            <th scope="col" width="10%">과목</th>
-            <th scope="col" width="10%">교수명</th>
+            <th scope="col" width="20%">과목</th>
+            <th scope="col" width="5%">교수명</th>
+            <th scope="col" width="5%">평점</th>
             <th scope="col" width="20%">제목</th>
-            <th scope="col" width="50%">내용</th>
-            <th scope="col" width="10%">작성시간</th>
+            <th scope="col" width="40%">내용</th>
+            <th scope="col" width="10%">작성날짜</th>
         <tr>
         </thead>
         <tbody>
@@ -20,9 +21,10 @@
             <tr>
                 <td>{{ rate.subject }}</td>
                 <td>{{ rate.professor }}</td>
+                <td>{{ rate.rate }}점</td>
                 <td><b>{{ rate.title }}</b></td>
                 <td>
-                    <a href="#">{{ rate.content|truncatechars:20 }} ... </a>
+                    <a href="#">{{ rate.content|truncatechars:20 }}</a>
                 </td>
                 <td>{{ rate.created_at|date:'y/m/d' }}</td>
             {% endfor %}
