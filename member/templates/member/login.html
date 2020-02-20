@@ -6,21 +6,21 @@
 <br>
 {% endif %}
 
-<h1>Login</h1>
+<h1>로그인</h1>
 
 <form method="POST" action="{% url 'login'%}">
 
     {% csrf_token %}
-    Username:
+    아이디:
     <br>
     <input name="username" type="text" value="">
     <br>
-    Password:
+    비밀번호:
     <br>
     <input name="password" type="password" value="">
     <br>
     <br>
-    <input class="btn btn-primary" type="submit" value="Login">
+    <input class="btn btn-primary" type="submit" value="로그인">
 </form>
 
 {% endblock %}

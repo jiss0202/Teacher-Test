@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import User
 from django.contrib import auth
 
@@ -12,7 +12,7 @@ def signup(request):
                 request.POST['username'], password=request.POST['password'],
                 grade = request.POST['grade'])
             auth.login(request, user)
-        return render(request,'member/login.html')
+        return redirect('login')
     return render(request, 'member/signup.html')
 
 def login(request):
@@ -22,9 +22,10 @@ def login(request):
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request,user)
-            return render(request,'member/index_tem.html')
+            return redirect('index_tem')
     return render(request,'member/login.html')
 
 def logout(request):
+    auth.logout(request)
     return render(request,'member/logout.html')
 
