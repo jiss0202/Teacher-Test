@@ -17,3 +17,7 @@ def create(req):
     else:
         form = RateForm()
     return render(req, 'rate/create.html', {"form":form})
+
+def home(req):
+    rates = Rate.objects
+    return render(req, 'rate/home.html', {'rates': rates})
