@@ -37,3 +37,8 @@ def update(req, rate_id):
     else:
         form = RateForm(instance=rate)
         return render(req, 'rate/edit.html', {"form":form})
+
+def delete(req, rate_id):
+    rate = get_object_or_404(Rate, pk = rate_id )
+    rate.delete()
+    return redirect('rate_list')
