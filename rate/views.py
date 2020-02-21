@@ -28,12 +28,12 @@ def edit(req):
 def update(req, rate_id):
     rate = get_object_or_404(Rate, pk = rate_id )
     if req.method == "POST":
-        form = RateForm(req.POST)
+        form = RateForm(req.POST, instance=rate)
         if form.is_valid():
             rate = form.save(commit=False)
             rate.user = req.user
             rate.save()
             return redirect('detail', rate_id=rate.pk)
     else:
-        form = RateForm()
+        form = RateForm(instance=rate)
         return render(req, 'rate/edit.html', {"form":form})
