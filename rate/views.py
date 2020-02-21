@@ -42,3 +42,9 @@ def delete(req, rate_id):
     rate = get_object_or_404(Rate, pk = rate_id )
     rate.delete()
     return redirect('rate_list')
+
+def search(req):
+    keyword = req.GET['keyword']
+    rates = Rate.objects.filter(subject__contains=keyword) | Rate.objects.filter(professor__contains=keyword)
+    rates = rates.order_by("-created_at")
+    return render(req, 'rate/list.html', {'rates':rates})
