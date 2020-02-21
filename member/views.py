@@ -22,7 +22,7 @@ def login(request):
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request,user)
-            return redirect('index_tem')
+            return redirect('rate_list')
     return render(request,'member/login.html')
 
 def logout(request):
