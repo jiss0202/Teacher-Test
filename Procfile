@@ -1,0 +1,1 @@
+web: gunicorn teacherTest.wsgi --log-file -
