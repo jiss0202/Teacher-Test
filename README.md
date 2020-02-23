@@ -39,7 +39,7 @@ whitenoise==5.0.1
 
 ## Collaborator
 - 지현이
-- 이주형
+- 이주형 harukawa99@likelion.org
 - 유지연
 - 최정연
 - 최예은
