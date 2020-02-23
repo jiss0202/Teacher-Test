@@ -41,7 +41,7 @@ whitenoise==5.0.1
 - 지현이
 - 이주형 harukawa99@likelion.org
 - 유지연
-- 최정연
+- 최정연 woodchuck98@likelion.org
 - 최예은
 
 
