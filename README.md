@@ -42,6 +42,6 @@ whitenoise==5.0.1
 - 이주형 harukawa99@likelion.org
 - 유지연
 - 최정연 woodchuck98@likelion.org
-- 최예은
+- 최예은 wtcat@likelion.org
 
 
