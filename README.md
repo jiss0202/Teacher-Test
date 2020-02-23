@@ -8,6 +8,13 @@ You can deploy this app yourself to Heroku to play with.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
+
+## Tech
+
+- Django (python)
+
+- HTML
+
 ## Building
 
 It is best to use the python `venv` tool to build locally:
