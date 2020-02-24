@@ -47,7 +47,7 @@ whitenoise==5.0.1
 ## Collaborator
 - 지현이 olo5112olo@likelion.org
 - 이주형 harukawa99@likelion.org
-- 유지연
+- 유지연 hellouz818@likelion.org
 - 최정연 woodchuck98@likelion.org
 - 최예은 wtcat@likelion.org
 
